@@ -389,6 +389,17 @@ void GcodeSuite::G28() {
       TERN_(BLTOUCH, bltouch.init());
     }
 
+    #if LINEAR_AXES >= 4
+      if (doI) homeaxis(I_AXIS);
+    #endif
+    #if LINEAR_AXES >= 5
+      if (doJ) homeaxis(J_AXIS);
+    #endif
+    #if LINEAR_AXES >= 6
+      if (doK) homeaxis(K_AXIS);
+    #endif
+    
+
     // Diagonal move first if both are homing
     TERN_(QUICK_HOME, if (doX && doY) quick_home_xy());
 
@@ -441,15 +452,7 @@ void GcodeSuite::G28() {
       }
     #endif
 
-    #if LINEAR_AXES >= 4
-      if (doI) homeaxis(I_AXIS);
-    #endif
-    #if LINEAR_AXES >= 5
-      if (doJ) homeaxis(J_AXIS);
-    #endif
-    #if LINEAR_AXES >= 6
-      if (doK) homeaxis(K_AXIS);
-    #endif
+
 
     sync_plan_position();
 

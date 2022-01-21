@@ -291,6 +291,14 @@
 #define K_SERIAL_RX_PIN                    K_SERIAL_TX_PIN
 
 
+#define E0_STEP_PIN                         PE6   // MOTOR 7
+#define E0_DIR_PIN                          PA6 // PA14  // SWD pin ...
+#define E0_ENABLE_PIN                       PE0
+#ifndef E0_CS_PIN
+   #define E0_CS_PIN                        PD3
+#endif
+#define E0_SERIAL_TX_PIN                    PD3
+#define E0_SERIAL_RX_PIN                    E0_SERIAL_TX_PIN
 
 //
 // Temperature Sensors
@@ -303,18 +311,18 @@
 //
 // Heaters / Fans
 //
-#define HEATER_BED_PIN                      PA1   // Hotbed
-#define HEATER_0_PIN                        PA2   // Heater0
-#define HEATER_1_PIN                        PA3   // Heater1
-#define HEATER_2_PIN                        PB10  // Heater2
-#define HEATER_3_PIN                        PB11  // Heater3
+#define HEATER_BED_PIN                      NC // PA1   // Hotbed
+#define HEATER_0_PIN                        NC // PA2   // Heater0
+#define HEATER_1_PIN                        NC // PA3   // Heater1
+#define HEATER_2_PIN                        NC // PB10  // Heater2
+#define HEATER_3_PIN                        NC // PB11  // Heater3
 
-#define FAN_PIN                             PA8   // Fan0
-#define FAN1_PIN                            PE5   // Fan1
-#define FAN2_PIN                            PD12  // Fan2
-#define FAN3_PIN                            PD13  // Fan3
-#define FAN4_PIN                            PD14  // Fan4
-#define FAN5_PIN                            PD15  // Fan5
+#define FAN_PIN                             NC // PA8   // Fan0
+#define FAN1_PIN                            NC // PE5   // Fan1
+#define FAN2_PIN                            NC // PD12  // Fan2
+#define FAN3_PIN                            NC // PD13  // Fan3
+#define FAN4_PIN                            NC // PD14  // Fan4
+// #define FAN5_PIN                            PD15  // Fan5
 
 //
 // SD Support
@@ -373,17 +381,17 @@
   // #define Z2_SERIAL_TX_PIN                  PC7
   // #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
-  #define E0_SERIAL_TX_PIN                  PF2
-  #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
+  // #define E0_SERIAL_TX_PIN                  PF2
+  // #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
-  #define E1_SERIAL_TX_PIN                  PE4
-  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  // #define E1_SERIAL_TX_PIN                  PE4
+  // #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
 
-  #define E2_SERIAL_TX_PIN                  PE1
-  #define E2_SERIAL_RX_PIN      E2_SERIAL_TX_PIN
+  // #define E2_SERIAL_TX_PIN                  PE1
+  // #define E2_SERIAL_RX_PIN      E2_SERIAL_TX_PIN
 
-  #define E3_SERIAL_TX_PIN                  PD3
-  #define E3_SERIAL_RX_PIN      E3_SERIAL_TX_PIN
+  // #define E3_SERIAL_TX_PIN                  PD3
+  // #define E3_SERIAL_RX_PIN      E3_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200

@@ -74,7 +74,7 @@ struct IF<true, L, R> { typedef L type; };
 enum AxisEnum : uint8_t {
 
   // Linear axes may be controlled directly or indirectly
-  LINEAR_AXIS_LIST(X_AXIS, Y_AXIS, Z_AXIS, I_AXIS, J_AXIS, K_AXIS)
+  LINEAR_AXIS_LIST(X_AXIS, Y_AXIS, Z_AXIS, I_AXIS, J_AXIS, K_AXIS )
 
   // Extruder axes may be considered distinctly
   #define _EN_ITEM(N) , E##N##_AXIS
